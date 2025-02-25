@@ -1,0 +1,1 @@
+![image](https://github.com/user-attachments/assets/9809f489-c77f-4ea3-a27b-e19fd43cb0c2)ATG7 in Innate Immune Cells Is Required for Host Defense Against Nontuberculous Mycobacterial Pulmonary Infections
