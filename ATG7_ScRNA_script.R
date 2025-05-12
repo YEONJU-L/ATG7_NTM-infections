@@ -85,7 +85,6 @@ DimPlot(merge,label =T)
 
 # myeloid markers
 # PanglaoDB :https://panglaodb.se/
-# AzimuthDB : https://azimuth.hubmapconsortium.org/references/#Mouse%20-%20Pansci
 
 genes <- c("Hopx", "Akap5", "Sftpc", "Sftpa1", "Lyz1", # AT
            "Scgb1a1", "Sec14l3", #ciliated
