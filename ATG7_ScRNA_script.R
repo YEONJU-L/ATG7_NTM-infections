@@ -84,13 +84,29 @@ DimPlot(merge,label =T)
 # Annotation --------------------------------------------------------------
 
 # myeloid markers
-# https://azimuth.hubmapconsortium.org/references/#Mouse%20-%20Pansci
-mast_cells <- c("Cpa3", "Mcpt1", "Tpsb2", "Mcpt2", "Mcpt9", "Olfr920", "Mrgprb2", "Cd200r3", "Mrgprb1", "Tpsab1")
-baso <- c("Rasa3", "Dhx40", "Hgf", "Arhgap10", "Il6", "Nrgn", "Hdc", "Nbeal2", "Slc6a4", "Pim1") 
-monocytes <- c("Hc", "Vcan", "Fgr", "Igsf6", "Pot1b", "RP23-349H13.2", "Sirpb1c", "Klra2", "Treml4", "Gpr141")
-neutrophils <- c("Irg1", "S100a9", "Ncf2", "Clec4d", "Stfa2l1", "R3hdm4", "Trem1", "A530064D06Rik", "RP24-127D13.2", "Retnlg")
-AM <-  c("Olr1", "Ncf1", "Cxcl2", "Fpr2", "Clec7a", "Cyb561a3", "RP24-443M8.2", "Abcg1", "Clec4n", "Fpr1") 
-IM <- c("Sirpa", "Stab1", "Msr1", "Ccr5", "Nrros", "Marco", "Aoah", "Sdc3", "Apobec1", "Mrc1")
+# PanglaoDB :https://panglaodb.se/
+# AzimuthDB : https://azimuth.hubmapconsortium.org/references/#Mouse%20-%20Pansci
+
+genes <- c("Hopx", "Akap5", "Sftpc", "Sftpa1", "Lyz1", # AT
+           "Scgb1a1", "Sec14l3", #ciliated
+           "Cd93","Hpgd", # cap
+           "Vwf","Fbln2", #vein
+           "Ccl21a", "Mmrn1", # lymph
+           "Col14a1", "Col13a1", "Acta2", "Gucy1a1", #stromal
+           "Ptprc","Cd68", # immune, macrophages
+           "Fcgr1","Stab1","Aoah", "Sdc3",# interstitial macrophages (IM)
+           "Marco", "Siglecf", "Itgax", "Olr1", # alveolar macrophages (AM)
+           "Csf3r", "Ly6g", "Il1r2","S100a8", "Trem1", # neutrophils
+           "Ccr2","Ifitm3", "Tet2","Sirpb1c", "Klra2", "Gpr141", # monocytes
+           "Zbtb46", "Slamf7", "Traf1", # Dendritic cells
+           "Cd3d", "Cd4", "Cd8a", # T cells
+           "Gzma", "Ccl5", "Csf2","Nkg7", # NK cells
+           "Cd19", "Igkc", "Ighm", "Mzb1") # B/plasma cells
+
+# checking features expression
+
+FeaturePlot(merge, genes)
+DotPlot(merge, genes, cols = "RdYlBu") + theme(axis.text.x = element_text(angel = 90)
 
 # annotation
 Idents(merge) <- merge$seurat_clusters 
